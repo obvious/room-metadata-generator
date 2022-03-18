@@ -1,11 +1,9 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
   id("java-gradle-plugin")
   id("org.jetbrains.kotlin.jvm") version ("1.6.10")
   `kotlin-dsl`
-  id("com.github.johnrengelman.shadow") version ("7.1.0")
 }
 
 group = "org.simple"
@@ -21,10 +19,6 @@ gradlePlugin {
 repositories {
   mavenCentral()
   google()
-}
-
-tasks.withType<ShadowJar> {
-  archiveClassifier.set("")
 }
 
 tasks.withType<Test> {
